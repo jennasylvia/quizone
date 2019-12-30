@@ -1,0 +1,25 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: password
+  host: localhost
+
+development:
+  <<: *default
+  database: quizone_development
+
+test:
+  <<: *default
+  database: quizone_test
+
+production:
+  <<: *default
+  database: quizone_production
+  # username: quizone
+  # password: <%= ENV['QUIZONE_DATABASE_PASSWORD'] %>
+ 
+ 
+ 
+ 
